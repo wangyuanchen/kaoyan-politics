@@ -1,0 +1,184 @@
+/**practice.wxss**/
+.tabs {
+  display: flex;
+  width: 100%;
+  height: 80rpx;
+  background-color: #fff;
+  border-bottom: 1rpx solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.tab-item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.tab-text {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.tab-active .tab-text {
+  color: #1989fa;
+  font-weight: bold;
+}
+
+.tab-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40rpx;
+  height: 4rpx;
+  background-color: #1989fa;
+}
+
+.license-tip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30rpx;
+  margin: 30rpx 0;
+  background-color: #fff8e1;
+}
+
+.license-tip-icon {
+  font-size: 60rpx;
+  margin-bottom: 20rpx;
+}
+
+.license-tip-text {
+  font-size: 28rpx;
+  color: #ff9800;
+  text-align: center;
+  margin-bottom: 20rpx;
+}
+
+.license-tip-btn {
+  font-size: 28rpx;
+  color: #fff;
+  background-color: #ff9800;
+  padding: 15rpx 40rpx;
+  border-radius: 30rpx;
+}
+
+.exercise-list {
+  width: 100%;
+  margin-top: 20rpx;
+}
+
+.exercise-item {
+  padding: 30rpx;
+  margin-bottom: 20rpx;
+  position: relative;
+}
+
+.exercise-locked {
+  opacity: 0.7;
+}
+
+.exercise-type {
+  margin-bottom: 20rpx;
+}
+
+.type-tag {
+  display: inline-block;
+  padding: 6rpx 16rpx;
+  border-radius: 6rpx;
+  font-size: 24rpx;
+}
+
+.type-single {
+  background-color: #e6f7ff;
+  color: #1989fa;
+}
+
+.type-multiple {
+  background-color: #f6ffed;
+  color: #52c41a;
+}
+
+.exercise-content {
+  margin-bottom: 20rpx;
+}
+
+.exercise-question {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 1.6;
+}
+
+.exercise-status {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 30rpx;
+  right: 30rpx;
+}
+
+.lock-icon {
+  font-size: 24rpx;
+  color: #ff9800;
+  margin-right: 10rpx;
+}
+
+.lock-text {
+  font-size: 24rpx;
+  color: #ff9800;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+  margin: 20rpx 0;
+}
+
+.load-more-text {
+  font-size: 28rpx;
+  color: #1989fa;
+}
+
+.no-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80rpx;
+  margin: 20rpx 0;
+}
+
+.no-more-text {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.empty-tip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100rpx 0;
+}
+
+.empty-icon {
+  font-size: 80rpx;
+  margin-bottom: 30rpx;
+}
+
+.empty-text {
+  font-size: 30rpx;
+  color: #999;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+} 

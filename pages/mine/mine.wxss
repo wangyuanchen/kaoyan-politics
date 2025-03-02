@@ -1,0 +1,234 @@
+/**mine.wxss**/
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx 0;
+}
+
+.user-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-bottom: 20rpx;
+}
+
+.user-avatar-placeholder {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  background-color: #f2f2f2;
+  margin-bottom: 20rpx;
+}
+
+.user-name {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.get-user-info-btn {
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  padding: 10rpx 30rpx;
+  background-color: #f2f2f2;
+  color: #666;
+  border-radius: 30rpx;
+}
+
+.license-info, .progress-info, .other-functions {
+  margin-top: 30rpx;
+  padding: 30rpx;
+}
+
+.license-title, .progress-title {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  border-bottom: 1rpx solid #eee;
+  padding-bottom: 20rpx;
+}
+
+.license-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.license-status {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.license-valid {
+  color: #07c160;
+}
+
+.license-invalid {
+  color: #ee0a24;
+}
+
+.status-icon {
+  font-size: 40rpx;
+  margin-right: 10rpx;
+}
+
+.status-text {
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.license-key-display {
+  margin-bottom: 30rpx;
+  text-align: center;
+}
+
+.license-key-label {
+  font-size: 28rpx;
+  color: #666;
+}
+
+.license-key-value {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.license-tip {
+  font-size: 28rpx;
+  color: #999;
+  margin-bottom: 30rpx;
+}
+
+.license-actions {
+  display: flex;
+  width: 100%;
+}
+
+.license-btn {
+  flex: 1;
+  font-size: 28rpx;
+  padding: 15rpx 0;
+  margin: 0 10rpx;
+  border-radius: 8rpx;
+}
+
+.license-btn-activate {
+  background-color: #1989fa;
+  color: #fff;
+}
+
+.license-btn-clear {
+  background-color: #f2f2f2;
+  color: #ee0a24;
+}
+
+.progress-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-item {
+  flex: 1;
+  text-align: center;
+}
+
+.progress-value {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #1989fa;
+  margin-bottom: 10rpx;
+}
+
+.progress-label {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.function-item {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+
+.function-item:last-child {
+  border-bottom: none;
+}
+
+.function-icon {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+
+.function-name {
+  flex: 1;
+  font-size: 30rpx;
+}
+
+.function-arrow {
+  font-size: 30rpx;
+  color: #ccc;
+}
+
+.license-input-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.license-input-content {
+  width: 80%;
+  background-color: #fff;
+  border-radius: 12rpx;
+  padding: 40rpx;
+}
+
+.license-input-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40rpx;
+}
+
+.license-input {
+  border: 1rpx solid #eee;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.license-input-tip {
+  font-size: 24rpx;
+  color: #999;
+  margin-bottom: 40rpx;
+}
+
+.license-input-actions {
+  display: flex;
+}
+
+.license-input-btn {
+  flex: 1;
+  font-size: 28rpx;
+  padding: 15rpx 0;
+  margin: 0 10rpx;
+  border-radius: 8rpx;
+}
+
+.license-input-btn-cancel {
+  background-color: #f2f2f2;
+  color: #666;
+}
+
+.license-input-btn-confirm {
+  background-color: #1989fa;
+  color: #fff;
+} 

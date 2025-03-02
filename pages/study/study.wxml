@@ -1,0 +1,59 @@
+<!--study.wxml-->
+<view class="container">
+  <!-- 科目信息 -->
+  <view class="subject-header card">
+    <block wx:if="{{currentSubject}}">
+      <view class="subject-name">{{currentSubject.name}}</view>
+      <view class="subject-action" bindtap="navigateToSubjectSelect">切换科目</view>
+    </block>
+    <block wx:else>
+      <view class="subject-name">请选择科目</view>
+      <view class="subject-action" bindtap="navigateToSubjectSelect">去选择</view>
+    </block>
+  </view>
+  
+  <!-- 未激活提示 -->
+  <view class="license-tip card" wx:if="{{!hasValidLicense}}">
+    <view class="license-tip-icon">🔒</view>
+    <view class="license-tip-text">您尚未激活完整版，请在"我的"页面输入密钥激活</view>
+    <navigator url="/pages/mine/mine" open-type="switchTab" class="license-tip-btn">去激活</navigator>
+  </view>
+  
+  <!-- 章节列表 -->
+  <block wx:if="{{currentSubject && chapters.length > 0}}">
+    <view class="chapter-list">
+      <block wx:for="{{chapters}}" wx:key="id">
+        <view class="chapter-item card {{!hasValidLicense && index > 0 ? 'chapter-locked' : ''}}" bindtap="onChapterTap" data-id="{{item.id}}" data-name="{{item.name}}">
+          <view class="chapter-info">
+            <view class="chapter-name">{{item.name}}</view>
+            <view class="chapter-status" wx:if="{{!hasValidLicense && index > 0}}">
+              <text class="lock-icon">🔒</text>
+              <text class="lock-text">未激活</text>
+            </view>
+          </view>
+          <view class="chapter-arrow">
+            <text class="arrow-icon">></text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </block>
+  
+  <!-- 无科目提示 -->
+  <view class="empty-tip" wx:elif="{{!currentSubject}}">
+    <view class="empty-icon">📚</view>
+    <view class="empty-text">请先选择一个科目</view>
+    <view class="empty-btn" bindtap="navigateToSubjectSelect">去选择科目</view>
+  </view>
+  
+  <!-- 无章节提示 -->
+  <view class="empty-tip" wx:elif="{{chapters.length === 0 && !loading}}">
+    <view class="empty-icon">📝</view>
+    <view class="empty-text">暂无章节内容</view>
+  </view>
+  
+  <!-- 加载中 -->
+  <view class="loading" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+</view> 

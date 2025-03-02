@@ -1,0 +1,95 @@
+/**index.wxss**/
+.banner {
+  width: 100%;
+  height: 350rpx;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+}
+
+.notice-bar {
+  width: 100%;
+  height: 70rpx;
+  background-color: #fff8e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20rpx;
+}
+
+.notice-text {
+  font-size: 26rpx;
+  color: #ff9800;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin: 30rpx 0 20rpx;
+  padding-left: 10rpx;
+  border-left: 8rpx solid #1989fa;
+}
+
+.subject-list {
+  width: 100%;
+}
+
+.subject-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 30rpx 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.subject-icon {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+}
+
+.subject-info {
+  flex: 1;
+}
+
+.subject-name {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.subject-desc {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.subject-arrow {
+  margin-left: 20rpx;
+}
+
+.arrow-icon {
+  font-size: 32rpx;
+  color: #ccc;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+}
+
+.footer {
+  margin-top: 40rpx;
+  padding: 30rpx 0;
+  text-align: center;
+  border-top: 1rpx solid #eee;
+}
+
+.footer-text {
+  font-size: 24rpx;
+  color: #999;
+} 

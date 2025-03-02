@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 顶部轮播图 -->
+  <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="500" circular="true">
+    <block wx:for="{{banners}}" wx:key="id">
+      <swiper-item bindtap="onBannerTap" data-link="{{item.link}}">
+        <image src="{{item.imageUrl}}" mode="aspectFill" class="banner-image"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  
+  <!-- 提示信息 -->
+  <view class="notice-bar" wx:if="{{!hasValidLicense}}">
+    <text class="notice-text">您尚未激活完整版，请在"我的"页面输入密钥激活</text>
+  </view>
+  
+  <!-- 科目列表 -->
+  <view class="section-title">考研政治科目</view>
+  
+  <view class="subject-list">
+    <block wx:for="{{subjects}}" wx:key="id">
+      <view class="subject-item card" bindtap="onSubjectTap" data-id="{{item.id}}" data-name="{{item.name}}">
+        <image class="subject-icon" src="{{item.icon}}" mode="aspectFit"></image>
+        <view class="subject-info">
+          <view class="subject-name">{{item.name}}</view>
+          <view class="subject-desc">{{item.description}}</view>
+        </view>
+        <view class="subject-arrow">
+          <text class="arrow-icon">></text>
+        </view>
+      </view>
+    </block>
+  </view>
+  
+  <!-- 加载中 -->
+  <view class="loading" wx:if="{{loading}}">
+    <text>加载中...</text>
+  </view>
+  
+  <!-- 底部提示 -->
+  <view class="footer">
+    <text class="footer-text">考研政治助手 - 助你考研成功</text>
+  </view>
+</view> 

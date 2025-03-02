@@ -1,0 +1,98 @@
+<!--mine.wxml-->
+<view class="container">
+  <!-- 用户信息 -->
+  <view class="user-info card">
+    <block wx:if="{{!hasUserInfo}}">
+      <view class="user-avatar-placeholder"></view>
+      <button class="get-user-info-btn" bindtap="getUserProfile" wx:if="{{canIUseGetUserProfile}}">点击获取头像昵称</button>
+    </block>
+    <block wx:else>
+      <image class="user-avatar" src="{{userInfo.avatarUrl}}"></image>
+      <view class="user-name">{{userInfo.nickName}}</view>
+    </block>
+  </view>
+  
+  <!-- 密钥信息 -->
+  <view class="license-info card">
+    <view class="license-title">密钥信息</view>
+    <view class="license-content">
+      <block wx:if="{{hasValidLicense}}">
+        <view class="license-status license-valid">
+          <text class="status-icon">✓</text>
+          <text class="status-text">已激活</text>
+        </view>
+        <view class="license-key-display">
+          <text class="license-key-label">密钥：</text>
+          <text class="license-key-value">{{licenseKey}}</text>
+        </view>
+        <view class="license-actions">
+          <button class="license-btn" bindtap="showLicenseInput">更换密钥</button>
+          <button class="license-btn license-btn-clear" bindtap="clearLicense">清除密钥</button>
+        </view>
+      </block>
+      <block wx:else>
+        <view class="license-status license-invalid">
+          <text class="status-icon">✗</text>
+          <text class="status-text">未激活</text>
+        </view>
+        <view class="license-tip">激活后可使用完整功能</view>
+        <button class="license-btn license-btn-activate" bindtap="showLicenseInput">输入密钥激活</button>
+      </block>
+    </view>
+  </view>
+  
+  <!-- 学习进度 -->
+  <view class="progress-info card">
+    <view class="progress-title">学习进度</view>
+    <view class="progress-content">
+      <view class="progress-item">
+        <view class="progress-value">{{progress.studyDays}}</view>
+        <view class="progress-label">学习天数</view>
+      </view>
+      <view class="progress-item">
+        <view class="progress-value">{{progress.completedChapters}}</view>
+        <view class="progress-label">完成章节</view>
+      </view>
+      <view class="progress-item">
+        <view class="progress-value">{{progress.totalExercises}}</view>
+        <view class="progress-label">做题数量</view>
+      </view>
+      <view class="progress-item">
+        <view class="progress-value">{{progress.correctRate}}%</view>
+        <view class="progress-label">正确率</view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 其他功能 -->
+  <view class="other-functions card">
+    <view class="function-item" bindtap="navigateToAbout">
+      <text class="function-icon">ℹ️</text>
+      <text class="function-name">关于我们</text>
+      <text class="function-arrow">></text>
+    </view>
+    <view class="function-item" bindtap="navigateToFeedback">
+      <text class="function-icon">📝</text>
+      <text class="function-name">意见反馈</text>
+      <text class="function-arrow">></text>
+    </view>
+    <view class="function-item" bindtap="copyWechat">
+      <text class="function-icon">👨‍💼</text>
+      <text class="function-name">联系客服</text>
+      <text class="function-arrow">></text>
+    </view>
+  </view>
+  
+  <!-- 密钥输入弹窗 -->
+  <view class="license-input-modal" wx:if="{{showLicenseInput}}">
+    <view class="license-input-content">
+      <view class="license-input-title">请输入密钥</view>
+      <input class="license-input" value="{{inputLicenseKey}}" bindinput="inputLicense" placeholder="请输入密钥" />
+      <view class="license-input-tip">密钥格式：KYZ-XXXXXXXXXXXX</view>
+      <view class="license-input-actions">
+        <button class="license-input-btn license-input-btn-cancel" bindtap="hideLicenseInput">取消</button>
+        <button class="license-input-btn license-input-btn-confirm" bindtap="verifyLicense">确定</button>
+      </view>
+    </view>
+  </view>
+</view> 
